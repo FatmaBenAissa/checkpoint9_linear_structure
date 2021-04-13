@@ -23,7 +23,8 @@ BEGIN
 
   FOR i FROM 0 TO htab.length -1 STEP 1  DO
        IF (htab.get(htab[i]) != 1) THEN
-          s:=s+htab[i];
+          n=htab.get(htab[i]);
+          s:=s+htab[i]*n;
        END_IF
    END_FOR
 
