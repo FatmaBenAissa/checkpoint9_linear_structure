@@ -1,7 +1,7 @@
 ALGORITHM problem1_solution2
 VAR
-  set1 : ARRAY_OF INTEGER[4]; // declaring the array and define its length.
-  set2 : ARRAY_OF INTEGER[5];
+  set1 : ARRAY_OF INTEGER[10]; // declaring the array and define its length.
+  set2 : ARRAY_OF INTEGER[10];
   set3:  ARRAY_OF INTEGER[10];
   htab : HASH_TABLE<INTEGER,INTEGER>;
    
@@ -14,8 +14,8 @@ BEGIN
   
   FOR i FROM 0 TO max-1 STEP step  DO
       FOR j FROM 0 TO max-1 STEP step  DO        // Create a htab table contain(element,count)
-         IF (set3[i]=set[j+1]) THEN
-            nbo=nbo+1;
+         IF (set3[i]=set3[j+1]) THEN
+            nbo:=nbo+1;
          END_IF 
       END_FOR
       htab.insert(set3[i],nbo);
@@ -23,7 +23,7 @@ BEGIN
 
   FOR i FROM 0 TO htab.length -1 STEP 1  DO
        IF (htab.get(htab[i]) = 1) THEN
-          s:=s+1;
+          s:=s+htab[i];
        END_IF
    END_FOR
 
